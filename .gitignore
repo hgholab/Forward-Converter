@@ -1,0 +1,10 @@
+# MATLAB temporary and autosave files
+*.asv
+*.autosave
+*.m~ 
+*.mex*
+
+# Simulink build folders
+slprj/
+simulink_cache/
+*_slxc/
