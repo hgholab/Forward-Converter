@@ -1,4 +1,4 @@
-% Forward Converter Controller Design
+% Forward Converter (Power Converter Design Course)
 
 %% ---------- Converter Electrical Specifications ----------
 % Input voltage in [V] (input voltage should be between 24 V and 29 V)
@@ -7,6 +7,7 @@ v_g = 24;
 
 % Output voltage in [V]
 v_out = 5;
+V = v_out; % The same value but used in the transfer functions
 
 % Maximum output current in [A]
 i_out_max = 10;
@@ -44,14 +45,14 @@ N_s = 15;
 % Turns ratio
 n = N_s / N_p;
 
-% DC value of the duty cycle
+% DC value of the duty cycle (Quiescent operation point duty cycle)
 D = v_out / v_g / n;
 
 % Output filter passive components values
 L = 25e-6;
 C = 100e-6;
 C_ESR = 0e-3;
-R_load = 5;
+R_load = 1;
 
 %% Choosing the Controller Type
 % This boolean variable chooses between analong and digital controller.
