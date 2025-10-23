@@ -2,10 +2,10 @@
 
 %% ---------- Converter Electrical Specifications ----------
 % Input voltage in [V] (input voltage should be between 24 V and 29 V)
-% The controller is designed for the lowest input voltage. (???)
+% ******The controller is designed for the lowest input voltage. (???)
 v_g_min = 24;
 v_g_max = 29;
-%v_g_mean = (v_g_min+v_g_max)/2
+v_g_mean = (v_g_min+v_g_max)/2
 v_g = 24;
 
 % Output voltage in [V]
@@ -38,7 +38,7 @@ T_sampling = T_sw;
 f_co = f_sw/10;
 
 % Simulation duration
-t_sim = T_sw * 1000;
+t_sim = T_sw * 2000;
 
 % Maximum duty cycle (when the transformer's core is being magnetized)
 % Choosing D_max = 0.45, allows us enough margin in each switching period
@@ -79,12 +79,6 @@ delta_i_L_pp = delta_v_out_max/R_ESR;
 % output inductor
 L = 25e-6;
 R_load = 1;
-
-%% Choosing the Controller Type
-% This boolean variable chooses between analong and digital controller.
-% The value 0 means that the converter is using the analog controller and
-% the value 1 means that the converter is using the digital controller.
-controller_type = 0;
 
 
 
