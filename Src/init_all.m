@@ -5,6 +5,7 @@ close all
 %% Load General Parameters
 init_general;
 
+
 %% Select Controller
 controller_type = "analog";  % or "digital"
 
@@ -18,3 +19,4 @@ switch controller_type
     otherwise
         error('Unknown controller type');
 end
+%}

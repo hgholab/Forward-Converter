@@ -25,7 +25,7 @@ i_out_max = 10;
 
 %% ---------- Chosen and Calculated Parameters and Values ----------
 % targeted efficiency
-eta = 0.8;
+eta = 1;
 % Sampling values are to be used in digital contoller design.
 % Switching and sampling frequency 
 f_sw = 100e3;
@@ -38,7 +38,10 @@ T_sampling = T_sw;
 f_co = f_sw/10;
 
 % Simulation duration
-t_sim = T_sw * 2000;
+t_sim = T_sw * 1000;
+t1 = t_sim / 4;
+t2 = t_sim / 2;
+t3 = t_sim * 3 / 4;
 
 % Maximum duty cycle (when the transformer's core is being magnetized)
 % Choosing D_max = 0.45, allows us enough margin in each switching period
@@ -68,16 +71,16 @@ D_min = v_out/(eta*v_g_max*n);
 % DC value of the duty cycle (Quiescent operation point duty cycle)
 D = v_out/v_g/n;
 
-% Output filter passive components values
+%% LC Output Filter Passive Components Values
 % Minumum value for the output filter capacitor
 % C = 100e-6;
-C = delta_i_out/(2*pi*f_co*delta_v_out_max);
+C = 220e-6;
 % Maximum value for the output capcitor ESR
 R_ESR = 1/(2*pi*f_co*C);
 % Output inductor maximum peak-to-peak current 
 delta_i_L_pp = delta_v_out_max/R_ESR;
 % output inductor
-L = 25e-6;
+L = 22e-6;
 R_load = 1;
 
 
