@@ -5,7 +5,8 @@
 % The controller is designed for the lowest input voltage. (???)
 v_g_min = 24;
 v_g_max = 29;
-% v_g_mean = (v_g_min+v_g_max)/2
+%v_g_mean = (v_g_min+v_g_max)/2
+v_g = 24;
 
 % Output voltage in [V]
 v_out = 5;
@@ -37,7 +38,7 @@ T_sampling = T_sw;
 f_co = f_sw/10;
 
 % Simulation duration
-t_sim = T_sw * 1000* 5;
+t_sim = T_sw * 1000;
 
 % Maximum duty cycle (when the transformer's core is being magnetized)
 % Choosing D_max = 0.45, allows us enough margin in each switching period
@@ -49,9 +50,9 @@ L_m = 5e-3;
 % Core loss resistor;
 R_m = 1e12;
 % Leakage inductance referred to the primary
-L1 = 0;
+L1 = 1e-18;
 % Copper resistance of windings reffered to the primary
-R1 = 0;
+R1 = 100e-4;
 % Transformer turns and the turns ratio (Ns/Np)
 % Primary number of turns
 % N_p = 25;
@@ -65,7 +66,7 @@ n = v_out/(eta*v_g_min*D_max);
 D_min = v_out/(eta*v_g_max*n);
 
 % DC value of the duty cycle (Quiescent operation point duty cycle)
-D = v_out/v_g_max/n;
+D = v_out/v_g/n;
 
 % Output filter passive components values
 % Minumum value for the output filter capacitor
@@ -74,7 +75,7 @@ C = delta_i_out/(2*pi*f_co*delta_v_out_max);
 % Maximum value for the output capcitor ESR
 R_ESR = 1/(2*pi*f_co*C);
 % Output inductor maximum peak-to-peak current 
-delta_i_L_pp = delta_v_out_max/R_ESR
+delta_i_L_pp = delta_v_out_max/R_ESR;
 % output inductor
 L = 25e-6;
 R_load = 1;

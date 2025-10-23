@@ -7,9 +7,6 @@ V_M = 3;
 % the quiescent value of the control voltage
 V_C = D*V_M;
 
-
- 
-
 % ---------- parameters values ----------
 % Run this file to initialize values used in the Simulink file
 % switching frequency
