@@ -2,37 +2,40 @@
 
 %% ---------- Converter Electrical Specifications ----------
 % Input voltage in [V] (input voltage should be between 24 V and 29 V)
-% ******The controller is designed for the lowest input voltage. (???)
-v_g_min = 24;
-v_g_max = 29;
-v_g_mean = (v_g_min+v_g_max)/2
-v_g = 24;
+% Minimum input voltage
+V_g_min = 24;
+% Maximum input voltage
+V_g_max = 29;
+% Nominal input voltage
+V_g_nom = (V_g_min+V_g_max)/2;
+V_g = 24;
 
 % Output voltage in [V]
-v_out = 5;
-V = v_out; % The same value but used in the transfer functions
+V_out = 5;
 
-% maximum voltage ripple
-delta_v_out_max = 50e-3;
-
-% What this is (???)
-delta_i_out = 5;
+% Maximum output voltage peak-to-peak ripple in [V]
+V_out_pp_ripple_max = 50e-3;
 
 % Maximum output current in [A]
-i_out_max = 10;
+I_out_max = 10;
+
+%% Chosen parameters by the designers
+% Switching and sampling frequency 
+% Sampling values are to be used in digital contoller design.
+f_sw = 100e3;
+f_sampling = f_sw;
+% Switching and sampling period in [s]
+T_sw = 1/f_sw;
+T_sampling = T_sw;
+% Minimum on time for switches in [s]
+T_on_min = 1e-6;
 
 
 
 %% ---------- Chosen and Calculated Parameters and Values ----------
-% targeted efficiency
-eta = 1;
-% Sampling values are to be used in digital contoller design.
-% Switching and sampling frequency 
-f_sw = 100e3;
-f_sampling = f_sw;
-% Switching and sampling period
-T_sw = 1 / f_sw;
-T_sampling = T_sw;
+% Targeted efficiency
+eta = 0.8;
+
 
 % Corssover frequency
 f_co = f_sw/10;
@@ -83,12 +86,3 @@ delta_i_L_pp = delta_v_out_max/R_ESR;
 % output inductor
 L = 22e-6;
 R_load = 1;
-
-
-
-
-
-
-
-
-
