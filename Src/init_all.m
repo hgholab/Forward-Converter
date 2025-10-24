@@ -5,7 +5,6 @@ close all
 %% Load General Parameters
 init_general;
 
-
 %% Select Controller
 controller_type = "analog";  % or "digital"
 

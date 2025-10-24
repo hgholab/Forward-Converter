@@ -63,7 +63,8 @@ R1 = 100e-4;
 % N_s = 15;
 % Turns ratio
 % n = N_s / N_p;
-n = v_out/(eta*v_g_min*D_max);
+% n = v_out/(eta*v_g_min*D_max);
+n = 0.5;
 
 % Minimum duty cycle
 D_min = v_out/(eta*v_g_max*n);
