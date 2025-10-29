@@ -54,9 +54,9 @@ f_co = f_sw/10;
 
 % simulation and step times
 % tSim = 0.4;
-t1 = 0.25 * t_sim;
-t2 = 0.5 * t_sim;
-t3 = 0.75 * t_sim;
+% t1 = 0.25 * t_sim;
+% t2 = 0.5 * t_sim;
+% t3 = 0.75 * t_sim;
 
 % ---------- open-loop transfer functions ----------
 % the open-loop line-to-output transfer function

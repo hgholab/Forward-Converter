@@ -6,7 +6,7 @@ close all
 init_general;
 
 %% Select Controller
-controller_type = "analog";  % or "digital"
+controller_type = "analog";  % "analog" or "digital"
 
 switch controller_type
     case "analog"
@@ -18,4 +18,3 @@ switch controller_type
     otherwise
         error('Unknown controller type');
 end
-%}
