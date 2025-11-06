@@ -5,9 +5,9 @@ close all
 %% --- Load General Parameters ---
 init_general;
 
-%% --- Select Controller ---
-controller_type = "analog";
-% controller_type = "digital";
+%% --- Controller Selection ---
+% controller_type = "analog";
+controller_type = "digital";
 
 switch controller_type
     case "analog"

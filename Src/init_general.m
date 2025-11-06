@@ -190,4 +190,4 @@ H = tf(ss(A,B,CC,E));
 % Line-to-output transfer function
 Gvg = H(1);
 % Control-to-output transfer function
-Gvd = H(3);
+Gvd = H(3)
