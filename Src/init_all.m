@@ -2,11 +2,12 @@ clc
 clear
 close all
 
-%% Load General Parameters
+%% --- Load General Parameters ---
 init_general;
 
-%% Select Controller
-controller_type = "analog";  % "analog" or "digital"
+%% --- Select Controller ---
+controller_type = "analog";
+% controller_type = "digital";
 
 switch controller_type
     case "analog"
@@ -14,7 +15,10 @@ switch controller_type
         init_analog_controller;
     case "digital"
         c_type = 1;
+        init_analog_controller; % This is needed to use c2d function.
         init_digital_controller;
     otherwise
         error('Unknown controller type');
 end
+
+close all
