@@ -6,13 +6,10 @@ V_M = 1;
 H = 3.3/5;
 % Desired crossover frequency of the loop gain after compensation 
 f_co = f_sw/10;
-
 % Uncompensated loop gain when Gc(s) = 1
 T_u = Gvd*H/V_M;
-
 % Evaluating the uncompensated loop gain at loop gain crossover frequency
 T_u_mag_at_f_co = abs(freqresp(T_u,f_co*2*pi));
-
 %% --- Design of The Compensator ---
 phi_max = 60*pi/180; % Gc1 maximum phase (60 degrees)
 f_z1 = f_co*sqrt((1-sin(phi_max))/(1+sin(phi_max)));
